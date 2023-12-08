@@ -1,4 +1,3 @@
-import os
 from src.code.make_prediction import make_prediction
 import click
 
@@ -10,11 +9,4 @@ def main(model, output_folder, text):
     make_prediction(model, output_folder, text)
 
 if __name__ == "__main__":
-
-    # Get the directory where the script is located
-    script_directory = os.path.dirname(os.path.abspath(__file__))
-    # Change the current working directory to the script's directory
-    os.chdir(script_directory)
-
     main()
-
