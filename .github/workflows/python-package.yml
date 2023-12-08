@@ -1,0 +1,32 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest ruff
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Lint with Ruff
+        run: |
+          ruff --ignore=F401,E501 --format=github --target-version=py37 .
+        continue-on-error: true
+      - name: Test with pytest
+        run: |
+          pytest --train-dataset-loc=kmaml223/train.csv --test-dataset-loc=kmaml223/test.csv tests/data --verbose --disable-warnings
+          pytest tests/code --verbose --disable-warnings
