@@ -2,15 +2,6 @@
 
 This repository contains code and notebooks for a text classification project focusing on toxic comment classification.
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Project Structure](#project-structure)
-- [Notebooks](#notebooks)
-- [Code](#code)
-- [Models](#models)
-- [Tests](#tests)
-
 ## Overview
 
 This project focuses on classifying toxic comments using machine learning techniques. The repository includes exploratory data analysis (EDA) notebooks, code for data preprocessing, model training, evaluation, and a testing suite.
