@@ -20,7 +20,7 @@ def test_train_baseline_models_and_tfidf():
     feature_columns = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
     for feature in feature_columns:
         expected_model_filename = f"{folder}/{feature}_model.pkl"
-        assert expected_model_filename.exists()
+        assert os.path.exists(expected_model_filename)
 
         # Check if the model file can be loaded
         loaded_model = joblib.load(expected_model_filename)
@@ -41,7 +41,7 @@ def test_train_logreg_acc_models_and_tfidf():
     feature_columns = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
     for feature in feature_columns:
         expected_model_filename = f"{folder}/{feature}_model.pkl"
-        assert expected_model_filename.exists()
+        assert os.path.exists(expected_model_filename)
 
         # Check if the model file can be loaded
         loaded_model = joblib.load(expected_model_filename)
@@ -62,7 +62,7 @@ def test_train_logreg_f1_models_and_tfidf():
     feature_columns = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
     for feature in feature_columns:
         expected_model_filename = f"{folder}/{feature}_model.pkl"
-        assert expected_model_filename.exists()
+        assert os.path.exists(expected_model_filename)
 
         # Check if the model file can be loaded
         loaded_model = joblib.load(expected_model_filename)
