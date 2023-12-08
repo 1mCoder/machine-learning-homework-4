@@ -10,9 +10,6 @@ This repository contains code and notebooks for a text classification project fo
 - [Code](#code)
 - [Models](#models)
 - [Tests](#tests)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
