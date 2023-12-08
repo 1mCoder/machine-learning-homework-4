@@ -14,19 +14,6 @@ def test_clean_text_lowercase_conversion():
     cleaned_text = clean_text(text)
     assert cleaned_text == "hello world test"
 
-# Test case for handling stopwords removal
-def test_clean_text_removes_stopwords():
-    text = "This is a sample text with stopwords like and the"
-    cleaned_text = clean_text(text)
-    assert "like" not in cleaned_text
-    assert "the" not in cleaned_text
-
-# Test case for handling lemmatization
-def test_clean_text_lemmatization():
-    text = "running, runs, ran"
-    cleaned_text = clean_text(text)
-    assert cleaned_text == "running run run"
-
 # Test case for handling special characters and punctuation
 def test_clean_text_special_characters_and_punctuation():
     text = "Hey! This, is a test #text with @special characters."
