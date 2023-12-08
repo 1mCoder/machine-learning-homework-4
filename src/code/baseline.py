@@ -5,10 +5,22 @@ import joblib
 from src.code.clean_text import clean_text
 from src.code.data import get_train_data
 
-def train_baseline():
+def get_subset_data(data, num_samples):
+    if num_samples == -1:
+        return data  # Return all data if num_samples is -1
 
-    # Getting first 1000 samples
-    train_subset = get_train_data().sample(n=1000)
+    # Calculate the subset size based on the provided number of samples or the data size (whichever is smaller)
+    subset_size = min(num_samples, len(data))
+
+    # Extract the subset of the data
+    subset = data[:subset_size]  # Use data[:subset_size] for pandas DataFrame or data[:subset_size, :] for numpy array
+
+    return subset
+
+def train_baseline(folder, num_samples):
+
+    # Getting training samples
+    train_subset = get_subset_data(get_train_data(), num_samples)
 
     # Cleaning 
     X_train = train_subset['comment_text'].apply(clean_text)
@@ -18,7 +30,6 @@ def train_baseline():
     X_train_tfidf = tfidf_vectorizer.fit_transform(X_train)
 
     # Making a directory
-    folder = "models/baseline"
     log_dir = Path(folder)
     log_dir.mkdir(parents=True, exist_ok=True)
 
