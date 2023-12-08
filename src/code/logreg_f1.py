@@ -47,7 +47,7 @@ def train_logistic_regression_with_f1():
     X_train_tfidf = tfidf_vectorizer.fit_transform(X_train)
 
     # Making a directory
-    folder = "../../models/logistic_regression_f1"
+    folder = "models/logistic_regression_f1"
     log_dir = Path(folder)
     log_dir.mkdir(parents=True, exist_ok=True)
 

@@ -18,7 +18,7 @@ def train_baseline():
     X_train_tfidf = tfidf_vectorizer.fit_transform(X_train)
 
     # Making a directory
-    folder = "../../models/baseline"
+    folder = "models/baseline"
     log_dir = Path(folder)
     log_dir.mkdir(parents=True, exist_ok=True)
 

@@ -48,7 +48,7 @@ def train_logistic_regression_with_accuracy():
     X_train_tfidf = tfidf_vectorizer.fit_transform(X_train)
 
     # Making a directory
-    folder = "../../models/logistic_regression_accuracy"
+    folder = "models/logistic_regression_accuracy"
     log_dir = Path(folder)
     log_dir.mkdir(parents=True, exist_ok=True)
 
