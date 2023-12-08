@@ -5,11 +5,11 @@ from src.code.baseline import train_baseline
 from src.code.logreg_acc import train_logistic_regression_with_accuracy 
 from src.code.logreg_f1 import train_logistic_regression_with_f1
 
-def test_train_baseline_models_and_tfidf(tmp_path):
+def test_train_baseline_models_and_tfidf():
     train_baseline()  # Execute the function
 
     # Define the expected directory path
-    folder = f"{tmp_path}/baseline"
+    folder = f"models/baseline"
     expected_tfidf_filename = f"{folder}/tfidf_vectorizer.pkl"
 
     # Check if the directory and files exist
@@ -26,11 +26,11 @@ def test_train_baseline_models_and_tfidf(tmp_path):
         loaded_model = joblib.load(expected_model_filename)
         assert isinstance(loaded_model, type(LogisticRegression()))
 
-def test_train_logreg_acc_models_and_tfidf(tmp_path):
+def test_train_logreg_acc_models_and_tfidf():
     train_logistic_regression_with_accuracy()  # Execute the function
 
     # Define the expected directory path
-    folder = f"{tmp_path}/logistic_regression_accuracy"
+    folder = f"models/logistic_regression_accuracy"
     expected_tfidf_filename = f"{folder}/tfidf_vectorizer.pkl"
 
     # Check if the directory and files exist
@@ -47,11 +47,11 @@ def test_train_logreg_acc_models_and_tfidf(tmp_path):
         loaded_model = joblib.load(expected_model_filename)
         assert isinstance(loaded_model, type(LogisticRegression()))
 
-def test_train_logreg_f1_models_and_tfidf(tmp_path):
+def test_train_logreg_f1_models_and_tfidf():
     train_logistic_regression_with_f1()  # Execute the function
 
     # Define the expected directory path
-    folder = f"{tmp_path}/logistic_regression_f1"
+    folder = f"models/logistic_regression_f1"
     expected_tfidf_filename = f"{folder}/tfidf_vectorizer.pkl"
 
     # Check if the directory and files exist
