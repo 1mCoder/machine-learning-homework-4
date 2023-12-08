@@ -1,7 +1,7 @@
 import pandas as pd
 import joblib
 from pathlib import Path
-from clean_text import clean_text
+from src.code.clean_text import clean_text
 
 # model can be 'baseline' | 'logreg_acc' | 'logreg_f1'
 def make_prediction(model, output_folder, text):

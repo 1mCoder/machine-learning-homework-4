@@ -4,8 +4,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score, make_scorer
 import joblib
-from clean_text import clean_text
-from data import get_train_data
+from src.code.clean_text import clean_text
+from src.code.data import get_train_data
 
 def get_best_model(train_data, train_labels):
     # Define hyperparameters and their distributions to sample from

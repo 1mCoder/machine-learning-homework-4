@@ -1,5 +1,5 @@
 import os
-from make_prediction import make_prediction
+from src.code.make_prediction import make_prediction
 import click
 
 @click.command(help="")

@@ -2,8 +2,8 @@ from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import joblib
-from clean_text import clean_text
-from data import get_train_data
+from src.code.clean_text import clean_text
+from src.code.data import get_train_data
 
 def train_baseline():
 

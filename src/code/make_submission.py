@@ -1,18 +1,18 @@
 import pandas as pd
 import joblib
 from pathlib import Path
-from data import get_test_data
-from clean_text import clean_text
+from src.code.data import get_test_data
+from src.code.clean_text import clean_text
 
 # model can be 'baseline' | 'logreg_acc' | 'logreg_f1'
 def make_submission(model, output_folder):
 
     models_folder = "../../models/"
-    if model is "baseline":
+    if model == "baseline":
         model_directory = f"{models_folder}/baseline"
-    elif model is "logreg_acc":
+    elif model == "logreg_acc":
         model_directory = f"{models_folder}/logistic_regression_accuracy"
-    elif model is "logreg_f1":
+    elif model == "logreg_f1":
         model_directory = f"{models_folder}/logistic_regression_f1"
     else:
         raise NotImplementedError(f"{model} not implemented")
