@@ -11,7 +11,7 @@ def test_train_baseline_models_and_tfidf(tmp_path):
     folder = f"{tmp_path}/baseline"
 
     # Execute the function
-    train_baseline(tmp_path, 1000)
+    train_baseline(folder, 1000)
 
     # Define the expected directory path
     expected_tfidf_filename = f"{folder}/tfidf_vectorizer.pkl"
