@@ -1,3 +1,4 @@
+import os
 import joblib
 from sklearn.linear_model import LogisticRegression
 from src.code.baseline import train_baseline 
@@ -9,11 +10,11 @@ def test_train_baseline_models_and_tfidf(tmp_path):
 
     # Define the expected directory path
     folder = f"{tmp_path}/baseline"
-    expected_tfidf_filename = f"{folder}tfidf_vectorizer.pkl"
+    expected_tfidf_filename = f"{folder}/tfidf_vectorizer.pkl"
 
     # Check if the directory and files exist
-    assert folder.exists()
-    assert expected_tfidf_filename.exists()
+    assert os.path.exists(folder)
+    assert os.path.exists(expected_tfidf_filename)
 
     # Check if models for each feature exist
     feature_columns = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
@@ -33,8 +34,8 @@ def test_train_logreg_acc_models_and_tfidf(tmp_path):
     expected_tfidf_filename = f"{folder}/tfidf_vectorizer.pkl"
 
     # Check if the directory and files exist
-    assert folder.exists()
-    assert expected_tfidf_filename.exists()
+    assert os.path.exists(folder)
+    assert os.path.exists(expected_tfidf_filename)
 
     # Check if models for each feature exist
     feature_columns = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
@@ -54,8 +55,8 @@ def test_train_logreg_f1_models_and_tfidf(tmp_path):
     expected_tfidf_filename = f"{folder}/tfidf_vectorizer.pkl"
 
     # Check if the directory and files exist
-    assert folder.exists()
-    assert expected_tfidf_filename.exists()
+    assert os.path.exists(folder)
+    assert os.path.exists(expected_tfidf_filename)
 
     # Check if models for each feature exist
     feature_columns = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']

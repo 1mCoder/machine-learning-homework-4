@@ -7,7 +7,7 @@ from src.code.clean_text import clean_text
 # model can be 'baseline' | 'logreg_acc' | 'logreg_f1'
 def make_submission(model, output_folder):
 
-    models_folder = "../../models/"
+    models_folder = "models"
     if model == "baseline":
         model_directory = f"{models_folder}/baseline"
     elif model == "logreg_acc":
